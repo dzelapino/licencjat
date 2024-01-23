@@ -1,0 +1,92 @@
+.RankingGameListContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 1%;
+    // height: 100vh;
+    background: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    .RankingGameList {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 50px;
+      max-width: 80%;
+      width: 70%;
+      min-width: 50%  ;
+      // height: 500px;
+      border: 2px solid rgb(255, 255, 255);
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      z-index: 1;
+      padding: 3rem 0;
+      .rankingTypes{
+        display: flex;
+        width: 90%;
+        text-align: center;
+        line-height: 10vh;
+        justify-content: center;
+        vertical-align: middle;
+        .disabledLink { 
+          width: 100%;
+          cursor: default;  
+          button {
+            width: 80%;
+            padding: 10px 0 10px 0;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            background-color: gray;
+            font-weight: 600;
+            cursor: default;
+            color: white;
+            transition: all 0.1s ease-in-out;
+          }
+        }
+        .enabledLink {        
+          width: 100%;
+          button {
+            width: 250px;
+            padding: 10px 0 10px 0;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            background-color: white;
+            font-weight: 600;
+            color: black;
+            transition: all 0.1s ease-in-out;
+            cursor: pointer;
+          }
+          button:hover {
+            scale: 1.03;
+          }
+        }
+      }
+      .gameList{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 8vh;
+        .game{
+          cursor: pointer;
+          min-width: 10vw;
+          height: 8vh;
+          margin: 1%;
+          border: 3px solid #4287f5;
+          background-color: #4287f5;
+          border-radius: 5%;
+          transition: border-color 0.2s ease-out, background-color 0.2s ease-out;
+        }
+        .game:hover {
+          border-color: white;
+          border-radius: 5px;
+        }
+      }
+    }
+  }

@@ -1,0 +1,220 @@
+.main {
+  animation-duration: 1s;
+  animation-name: navRender;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 80vw;
+  min-width: 280px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  border: none;
+  border-radius: 20px;
+  font-size: larger;
+  padding: 0 2rem;
+  font-weight: bolder;
+  overflow: hidden;
+  color: white;
+  z-index: 5;
+  -webkit-box-shadow: -1px -1px 30px -20px rgba(255, 255, 255, 1);
+  -moz-box-shadow: -1px -1px 30px -20px rgba(255, 255, 255, 1);
+  box-shadow: -1px -1px 30px -20px rgba(255, 255, 255, 1);
+  border: 1px solid;
+  .leftSide {
+    display: flex;
+    gap: 2rem;
+    .navLink:hover {
+      transform: scale(1.05);
+    }
+  }
+  .backButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+    &__icon {
+      filter: invert(1);
+    }
+    &__icon:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  text-transform: uppercase;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  height: 3rem;
+}
+
+.main:hover {
+  border: 1px solid var(--color-primary);
+}
+.dropdownText {
+  font-size: 1.25rem;
+  padding: 0.5rem 1rem;
+  margin-right: -0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  div {
+    display: none;
+  }
+}
+
+.dropdownText:hover {
+  scale: 1.2;
+  color: var(--color-primary);
+}
+
+.sidebar {
+  animation-duration: 1s;
+  animation-name: sidebarRender;
+  display: flex;
+  gap: 2rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  min-width: 300px;
+  background: rgb(0, 0, 0);
+  border-left: 1px solid rgba(255, 255, 255, 0.432);
+  height: 100vh;
+  flex-direction: column;
+  padding: 1.5rem;
+  z-index: 10;
+  .sidebarBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+  .sidebarCancel {
+    all: unset;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  .sidebarCancel:hover {
+    color: var(--color-primary);
+  }
+  .dropMenu {
+    display: flex;
+    flex-direction: column;
+    .navLink {
+      padding: 1rem;
+      border-bottom: 1px solid white;
+      transition: all 0.2s ease-in-out;
+    }
+    .navLink:hover {
+      color: var(--color-primary);
+      cursor: pointer;
+      scale: 1.03;
+    }
+    .sidebarButtons {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      > .navLink {
+        border: 1px solid;
+        border-radius: 0.5rem;
+      }
+    }
+  }
+}
+
+@keyframes sidebarRender {
+  from {
+    opacity: 0%;
+    margin-right: -100%;
+  }
+
+  to {
+    opacity: 100%;
+    margin-right: 0%;
+  }
+}
+
+@keyframes navRender {
+  from {
+    width: 20%;
+    color: black;
+  }
+
+  to {
+    width: 100%;
+    color: white;
+  }
+}
+
+@media (max-width: 500px) {
+  .main {
+    padding: 0 1rem;
+    .leftSide {
+      gap: 0.5rem;
+    }
+    .sidebar {
+      width: 100vw;
+      .dropMenu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        > .navLink {
+          width: 80%;
+          margin-left: 1rem;
+          padding: 1rem 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 777px) {
+  .main {
+    justify-content: space-between;
+    background: none;
+    border: none;
+    padding: 0 1rem;
+    max-width: 100%;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    .backButton {
+      background-color: transparent;
+      color: white;
+      border: 1px solid white;
+      border-radius: 2rem;
+    }
+
+    .leftSide {
+      display: none;
+    }
+    .dropdownText {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      border: 1px solid white;
+      border-radius: 360px;
+      display: flex;
+      font-size: 1rem;
+      gap: 1rem;
+      div {
+        display: flex;
+      }
+    }
+  }
+  .main:hover {
+    border: none;
+  }
+}

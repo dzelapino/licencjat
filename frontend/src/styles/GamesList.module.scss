@@ -1,0 +1,47 @@
+.games_list {
+  &__component {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+  }
+  &__content {
+    position: relative;
+    width: 100%;
+    max-width: 80vw;
+  }
+  &__title {
+    padding: 1rem;
+  }
+  &__table {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1rem;
+  }
+  &__game {
+    background-color: transparent;
+    border-radius: 1rem;
+    border: 2px solid rgb(255, 255, 255);
+    height: 200px;
+    max-width: 200px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    font-size: 1rem;
+    box-shadow: inset 0px 0px 10px 3px var(--color-primary);
+  }
+  &__add {
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+  }
+  &__separator {
+    width: 100%;
+    border: 1px solid white;
+    margin: 1rem;
+  }
+}

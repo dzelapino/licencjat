@@ -1,0 +1,125 @@
+$TileSize: 25rem;
+
+.MainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  // height: 100vh;
+  background: transparent;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  color: white;
+  .formContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    min-height: $TileSize;
+    max-width: 400px;
+    width: 100%;
+    min-width: 300px;
+    // height: 500px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+    padding: 3rem 0;
+    .inputBox {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      max-width: 300px;
+      width: 100%;
+      min-width: 200px;
+      .inputError {
+        position: relative;
+        top: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #ff0015;
+        text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.397);
+        font-size: 0.75rem;
+        width: 90%;
+        margin-left: 10px;
+      }
+    }
+    input {
+      color: white;
+    }
+    .inputBox input {
+      width: 90%;
+      padding: 10px;
+      font-size: 18px;
+      border: 1px solid white;
+      background: transparent;
+      outline: none;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+    }
+    .inputBox span {
+      position: absolute;
+      left: 0;
+      margin: 15px;
+      font-size: 0.75em;
+      text-transform: uppercase;
+      transition: all 0.3s ease-in-out;
+    }
+    span:hover,
+    .inputBox input:not([value=""]) ~ span,
+    .inputBox input:not(:empty) ~ span,
+    .inputBox input:hover ~ span,
+    .inputBox input:valid ~ span,
+    .inputBox input:focus ~ span {
+      transform: translateX(10px) translateY(-30px);
+      font-size: 10px;
+    }
+    button {
+      width: 250px;
+      padding: 10px 0 10px 0;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      background-color: white;
+      font-weight: 600;
+      color: black;
+      transition: all 0.1s ease-in-out;
+      cursor: pointer;
+    }
+    button:hover {
+      scale: 1.03;
+    }
+    .Redirect {
+      display: flex;
+      gap: 7px;
+      margin-top: -20px;
+      :nth-child(1) {
+        text-decoration: underline;
+      }
+    }
+    .RedirectColumn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      margin-top: -20px;
+      :nth-child(1) {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .loginContainer {
+    z-index: 0;
+    span {
+      transform: translateX(10px) translateY(-25px);
+    }
+  }
+}

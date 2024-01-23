@@ -1,0 +1,72 @@
+.TetrisContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  outline: none !important;
+  .TetrisBox {
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    z-index: 1;
+    .Game {
+      display: flex;
+      flex-direction: column;
+      .TetrisGrid {
+        background-color: rgba(96, 92, 92, 0);
+        .TetrisRow {
+          display: flex;
+          .TetrisCell {
+            text-align: center;
+            height: 3.6vh;
+            width: 3.6vh;
+            backdrop-filter: blur(30px);
+            border-radius: 1em;
+            border: 0.1em solid rgb(255, 255, 255);
+          }
+          .TetrisCellFull-1 {
+            background-color: rgb(255, 0, 0);
+          }
+          .TetrisCellFull-2 {
+            background-color: rgb(0, 255, 0);
+          }
+          .TetrisCellFull-3 {
+            background-color: rgb(255, 0, 255);
+          }
+          .TetrisCellFull-4 {
+            background-color: rgb(0, 255, 255);
+          }
+          .TetrisCellFull-5 {
+            background-color: rgb(255, 255, 0);
+          }
+          .TetrisCellFull-6 {
+            background-color: rgb(255, 238, 141);
+          }
+          .TetrisCellFull-7 {
+            background-color: rgb(0, 0, 255);
+          }
+        }
+      }
+      .Sidebar {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        vertical-align: middle;
+        padding: 1em;
+        width: 100%;
+        background: none;
+        button {
+          width: 50%;
+        }
+        .Score {
+          width: 50%;
+          font-size: 2em;
+          font-weight: bolder;
+        }
+      }
+    }
+  }
+}

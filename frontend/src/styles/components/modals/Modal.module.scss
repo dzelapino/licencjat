@@ -1,0 +1,76 @@
+.Modal {
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  .ModalBackground {
+    animation-duration: 0.5s;
+    animation-name: BackgroundRender;
+    backdrop-filter: blur(5px);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 21;
+  }
+  .ModalContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10rem 5rem;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    gap: 3rem;
+    font-weight: bold;
+    font-size: large;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 25px;
+    backdrop-filter: blur(15px);
+    z-index: 22;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.75);
+    text-align: center;
+    .ModalText {
+      font-size: 2rem;
+    }
+    .ModalButtons {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+  }
+}
+
+@keyframes BackgroundRender {
+  from {
+    width: 0vw;
+    height: 0vh;
+    backdrop-filter: blur(0px);
+    border-radius: 100%;
+  }
+
+  to {
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+    border-radius: 0%;
+  }
+}
+
+@media (max-width: 500px) {
+.Modal {
+  .ModalContent {
+    border: none;
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+  }
+}  
+}

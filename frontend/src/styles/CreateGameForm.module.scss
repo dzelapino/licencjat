@@ -1,0 +1,98 @@
+.createGameContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 1%;
+  // height: 100vh;
+  background: transparent;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  .formContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    max-width: 80%;
+    width: 70%;
+    min-width: 50%  ;
+    // height: 500px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+    padding: 3rem 0;
+    .title{
+      display: flex;
+    }
+    .inputBox {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      max-width: 50%;
+      width: 100%;
+      min-width: 200px;
+      height: 17vh;
+    }
+    .inputBox input {
+      padding: 10px;
+      font-size: 18px;
+      border: 1px solid white;
+      background: transparent;
+      outline: none;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      text-align: center; 
+    }
+    .inputBox .myinput{
+      width: 100%;
+    }
+    .inputBox .label {
+      text-align: center;
+      margin-bottom: 5%;
+    }
+    .switchinput{
+      display: flex;
+      line-height: 5.8vh;
+      justify-content: center;
+      vertical-align: middle;
+    }
+    .info_image{
+      margin-left: 1%;
+    }
+    .info_image ~ .tooltiptext {
+      visibility: hidden;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      padding: 5px 0;
+      border-radius: 6px;
+      bottom: 100%;
+      left: 50%;
+      margin-left: -50%;
+      position: absolute;
+    }
+    .info_image:hover ~ .tooltiptext {
+      visibility: visible;
+    }
+    button {
+      width: 250px;
+      padding: 10px 0 10px 0;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      background-color: white;
+      font-weight: 600;
+      color: black;
+      transition: all 0.1s ease-in-out;
+      cursor: pointer;
+    }
+    button:hover {
+      scale: 1.03;
+    }
+  }
+}

@@ -1,0 +1,108 @@
+.createGameContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 1%;
+  // height: 100vh;
+  background: transparent;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  color: white;
+  .infoContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 900px;
+    width: 70%;
+    min-width: 300px;
+
+    // min-width: 50%;
+    // height: 500px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+    padding: 2rem 0;
+    .column__divider {
+      display: flex;
+      height: 100%;
+      border-left: 1px solid;
+    }
+    .info__column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+      > div {
+        text-align: center;
+      }
+      .info__column__title {
+        width: 100%;
+      }
+      .font_start {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+    }
+    .info__underlined {
+      white-space: normal; /* Allow text to wrap on small screens */
+      overflow: initial; /* Show the entire content */
+      text-overflow: clip;
+      color: var(--color-primary);
+      text-decoration: underline;
+    }
+    .column__left {
+      border-right: 1px solid;
+    }
+    .link {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    button {
+      width: 60%;
+      padding: 10px 0 10px 0;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      background-color: white;
+      font-weight: 600;
+      color: black;
+      transition: all 0.1s ease-in-out;
+      cursor: pointer;
+    }
+    button:hover {
+      scale: 1.03;
+      color: var(--color-primary);
+      background-color: rgba(0, 0, 0, 0.582);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .createGameContainer {
+    .infoContainer {
+      flex-direction: column;
+      padding: 0;
+      .info__column {
+        padding: 1.5rem 0;
+        width: 90%;
+      }
+      .column__left {
+        border-right: none;
+        border-bottom: 1px solid;
+      }
+    }
+  }
+}
+
+.rowwrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}

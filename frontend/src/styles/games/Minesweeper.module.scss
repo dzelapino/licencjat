@@ -1,0 +1,108 @@
+$cell-size: 3.6vh;
+
+@import url('https://fonts.cdnfonts.com/css/ds-digital');
+
+.MinesweeperContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 1%;
+  background: transparent;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  outline: none !important;
+  .MinesweeperBox {
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+    padding: 3rem 0;
+    display: flex;
+    .Game {
+      flex-direction: column;
+      width: 90%;
+      border: 3px solid #000;
+      .MinesweeperGrid {
+        background-color: #75716d;
+        .MinesweeperRow {
+          display: flex;
+          .MinesweeperCellHidden,
+          .MinesweeperCellFlag,
+          .MinesweeperCellVisible {
+            text-align: center;
+            line-height: $cell-size;
+            justify-content: center;
+            align-items: center;
+            vertical-align: middle;
+            height: $cell-size;
+            width: $cell-size;
+            border: 1px solid #000;
+            button {
+              padding: 10%;
+              height: 100%;
+              width: 100%;
+            }
+          }
+          .MinesweeperCellHidden button {
+            background-color: #554949;
+          }
+          .MinesweeperCellFlag button {
+            background-color: #8d7777;
+          }
+          .MinesweeperCellVisible {
+            div{
+              height: 100%;
+              width: 100%;
+              font-size: 100%;
+            }
+            .Bomb {
+              background-color: red;
+            }
+          }
+        }
+      }
+      .Sidebar{
+        font-family: 'DS-Digital', sans-serif;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        line-height: 10vh;
+        justify-content: space-between;
+        vertical-align: middle;
+        .Time{
+          display: flex;
+          margin-left: 8%;
+          font-size: 5vh;
+          height: 100%;
+        }
+        .Bombs{
+          display: flex;
+          margin-right: 8%;
+          font-size: 5vh;
+          height: 100%;
+        }
+        button{
+          font-family: Arial, Helvetica, sans-serif;
+          text-align: center;
+          line-height: 5vh;
+          justify-content: center;
+          vertical-align: middle;
+          width: 100%;
+          background-color: blue;
+          border: 1px solid black;  
+        }
+        .Start{
+          background-color: blue;
+        }
+        button:hover{
+          border: 2px solid yellow;
+        }
+      }
+    }
+  }
+}

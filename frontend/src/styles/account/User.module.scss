@@ -1,0 +1,314 @@
+$TileSize: 25rem;
+$AnimationDuration: 0.5s;
+
+.MainContainerLoading {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  .Dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    display: inline-block;
+  }
+}
+
+.Dot:nth-last-child(1) {
+  animation: jumpingAnimation 0.6s 0.1s ease-in infinite;
+}
+.Dot:nth-last-child(2) {
+  animation: jumpingAnimation 0.6s 0.2s ease-in infinite;
+}
+.Dot:nth-last-child(3) {
+  animation: jumpingAnimation 0.6s 0.3s ease-in infinite;
+}
+
+@keyframes jumpingAnimation {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, 15px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.MainContainer {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  .UserContainer {
+    display: flex;
+    gap: 5%;
+    align-items: center;
+    justify-content: center;
+    .UserTileActive,
+    .UserTileInactive,
+    .UserTileNoAnimation {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 2;
+    }
+    .UserTileInactive {
+      animation-duration: $AnimationDuration;
+      animation-name: hideTile;
+      position: relative;
+    }
+    .UserTileActive {
+      animation-duration: $AnimationDuration;
+      animation-name: showTile;
+      position: fixed;
+    }
+    .UserMenuActive,
+    .UserMenuInactive,
+    .UserMenuNoAnimation {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .UserTileNoAnimation,
+    .UserMenuNoAnimation {
+      position: fixed;
+      a {
+        opacity: 0;
+      }
+    }
+    .UserMenuNoAnimation {
+      opacity: 0%;
+    }
+    .UserMenuActive {
+      animation-duration: $AnimationDuration;
+      animation-name: showMenu;
+      color: white;
+      z-index: 1;
+    }
+    .UserMenuInactive {
+      animation-duration: $AnimationDuration;
+      animation-name: hideMenu;
+      color: transparent;
+      z-index: 1;
+      opacity: 0;
+      a {
+        opacity: 0;
+      }
+    }
+  }
+  .UserMenuShowButton,
+  .UserMenuHideButton,
+  a {
+    width: 250px;
+    padding: 10px 0 10px 0;
+    border: none;
+    border-radius: 20px;
+    font-size: medium;
+    background-color: white;
+    font-weight: bolder;
+    color: black;
+    cursor: pointer;
+    text-align: center;
+  }
+  .UserMenuShowButton:hover,
+  .UserMenuHideButton:hover,
+  a:hover {
+    transform: scale(1.05);
+  }
+  a {
+    animation-duration: $AnimationDuration;
+    animation-name: buttonAppear;
+  }
+}
+
+.UserTile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-width: $TileSize;
+  width: auto;
+  min-height: $TileSize;
+  padding: 2rem;
+  gap: 1.2rem;
+  height: auto;
+  font-weight: bold;
+  font-size: large;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  z-index: 2;
+  .UserPicture {
+    border: solid 0.25em white;
+    width: $TileSize/4;
+    height: $TileSize/4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: transparent;
+  }
+  .Username {
+    font-size: $TileSize/10;
+  }
+}
+
+.UserMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-width: $TileSize;
+  width: auto;
+  min-height: $TileSize;
+  padding: 2rem;
+  gap: 1.2rem;
+  height: auto;
+  font-weight: bold;
+  font-size: large;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+@keyframes showMenu {
+  from {
+    opacity: 0%;
+    position: fixed;
+    right: calc(50% - $TileSize/2);
+  }
+  to {
+    opacity: 100%;
+    position: relative;
+    right: calc(50% - $TileSize);
+  }
+}
+
+@keyframes hideMenu {
+  from {
+    position: relative;
+    right: calc(50% - $TileSize);
+    opacity: 100%;
+  }
+  to {
+    position: fixed;
+    right: calc(50% - $TileSize/2);
+    opacity: 0%;
+  }
+}
+
+@keyframes hideTile {
+  from {
+    position: fixed;
+    left: calc(50% - $TileSize/2);
+  }
+  to {
+    position: relative;
+    left: calc(50% - $TileSize);
+  }
+}
+
+@keyframes showTile {
+  from {
+    position: relative;
+    left: calc(50% - $TileSize);
+  }
+  to {
+    position: fixed;
+    left: calc(50% - $TileSize/2);
+  }
+}
+
+@media (max-width: 1000px) {
+  .MainContainer {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    .UserContainer {
+      flex-direction: column;
+      justify-content: center;
+      gap: 2.5%;
+      .UserMenuActive {
+        animation-name: showMenuVertical;
+        z-index: 2;
+        color: white;
+        position: fixed;
+        opacity: 100%;
+      }
+      .UserMenuInactive {
+        animation-name: hideMenuVertical;
+        z-index: 1;
+        color: transparent;
+        position: fixed;
+        opacity: 0%;
+      }
+      .UserTileInactive {
+        animation-name: hideTileVertical;
+        z-index: 1;
+        color: transparent;
+        position: fixed;
+        opacity: 0%;
+      }
+      .UserTileActive {
+        animation-name: showTileVertical;
+        z-index: 2;
+        color: white;
+        position: fixed;
+        opacity: 100%;
+      }
+    }
+  }
+}
+
+@keyframes showMenuVertical {
+  from {
+    color: transparent;
+  }
+  to {
+    color: white;
+  }
+}
+
+@keyframes hideMenuVertical {
+  from {
+    color: white;
+  }
+  to {
+    color: transparent;
+  }
+}
+
+@keyframes hideTileVertical {
+  from {
+    color: white;
+  }
+  to {
+    color: transparent;
+  }
+}
+
+@keyframes showTileVertical {
+  from {
+    color: transparent;
+  }
+  to {
+    color: white;
+  }
+}
+
+@keyframes buttonAppear {
+  from {
+    opacity: 0%;
+    color: transparent;
+  }
+  to {
+    opacity: 100%;
+    color: black;
+  }
+}

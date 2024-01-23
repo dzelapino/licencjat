@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap");
+/* Google maps map */
+#map_container {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  z-index: 1;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+  font-family: "Titillium Web", sans-serif;
+}
+
+#map {
+  border: 2px solid transparent;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+#map_container:hover,
+#map_container:active {
+  opacity: 1;
+}
+
+#map_container:hover > #map {
+  width: 680px !important;
+  height: 500px !important;
+}
+
+#map_container.active {
+  width: 100%;
+  height: 100vh;
+  opacity: 1;
+  top: 0;
+  left: 0;
+}
+
+#map_container.active > #map {
+  width: 100% !important;
+  height: 100% !important;
+  border: none;
+  border-radius: 0;
+}
+
+#progressBar {
+  height: 10px;
+  background-color: hsla(0, 0%, 100%, 0.2);
+  width: 50%;
+  border-radius: 30px;
+}
+#progress {
+  background-color: #fecd19;
+  /* width: 100%; */
+  height: 100%;
+  border-radius: 30px;
+}
+
+#nextRound,
+#confirmButton,
+#playAgain {
+  padding: 10px 20px 10px 20px;
+  background-color: rgba(0, 0, 0, 0.425);
+  border-radius: 30px;
+  border: none;
+  color: white;
+  width: 100%;
+  opacity: 1;
+  font-size: 16px;
+  font-family: "Titillium Web", sans-serif;
+  margin-top: 5px;
+  transition: all 0.2s ease;
+}
+#nextRound:hover,
+#confirmButton.active:hover,
+#playAgain:hover {
+  padding: 12px 22px 12px 22px;
+  margin-top: 1px;
+  cursor: pointer;
+}
+
+#nextRound,
+#playAgain {
+  width: auto;
+  background-color: #6cb928;
+}
+#playAgain > Link {
+  text-decoration: none;
+  color: white;
+}
+
+#confirmButton.active {
+  background-color: #6cb928;
+}
+#confirmButton.active:hover {
+  padding: 12px 22px 12px 22px;
+  margin-top: 1px;
+}
+
+#start {
+  display: none;
+}
+
+/* starting point flag */
+#startingPoint {
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+  z-index: 1;
+  background-color: transparent;
+  border: transparent;
+}
+#startingPoint > img {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.605);
+  padding: 8px;
+  border-radius: 360px;
+}
+#startingPoint > img:hover {
+  cursor: pointer;
+}
+#startingPoint.active {
+  display: none;
+}
+
+.scoreboard {
+  width: 100%;
+  height: 40%;
+  /* display: none; */
+  background: linear-gradient(transparent, #000),
+    linear-gradient(90deg, #28374c, #221d6c);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  gap: 15px;
+}
+
+.score_board {
+  position: fixed;
+  top: 70px;
+  right: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.605);
+  color: white;
+  padding: 5px;
+  display: flex;
+  gap: 20px;
+}
+.score_board > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.roundPoints {
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fecd19;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.cancel {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 5px;
+  border-radius: 50%;
+  border: 1px solid black;
+  right: 5px;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  display: none;
+}

@@ -1,0 +1,172 @@
+$cell-size: 8vh;
+.CheckersContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 1%;
+  background: transparent;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  outline: none !important;
+  .CheckersBox {
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border: 2px solid #fff;
+    background-color: gray;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+    padding: 3rem 0;
+    display: flex;
+    .Game {
+      flex-direction: column;
+      width: 90%;
+      display: flex;
+      .LowerBar{
+        border: 3px solid #000;
+        border-top-width: 0;
+        display: flex;
+        height: $cell-size;
+        width: calc(#{$cell-size} * 8 + 6px);
+        margin-left: 5%;
+        background-color: rgb(244, 241, 241);
+        justify-content: space-between;
+        padding-left: 4%;
+        padding-right: 4%;
+        .LowerBarValue{
+          color: black;
+          height: $cell-size;
+          font-size: 150%;
+          justify-content: center;
+          text-align: center;
+          vertical-align: middle;
+          line-height: $cell-size;
+        }
+      }
+      .MainBar{
+        display: flex;
+        .LeftBar{
+          display: flex;
+          flex-direction: column-reverse;
+          border: 3px solid #000;
+          border-right-width: 0;
+          min-width: 5%;
+          background-color: rgb(244, 241, 241);
+          .LeftBarValue{
+            color: black;
+            font-size: 150%;
+            text-align: center;
+            line-height: $cell-size;
+          }
+        }
+        .RightBar{
+          border: 3px solid #000;
+          border-left-width: 0;
+          min-width: 20%;
+          max-width: 25%; 
+          background-color: rgb(244, 241, 241);
+          .RedPawnsLeft{
+            display: flex;
+            justify-content: center;
+            align-items: flex;
+            padding-top: 5%;
+            height: 30%;
+            color: red;
+            .RedPawnsLeftAmount{
+              color: red;
+            }
+          }
+          .BluePawnsLeft{
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 5%;
+            height: 30%;
+            color: blue;
+            .BluePawnsLeftAmount{
+              color: blue;
+            }
+          }
+          .CurrentPlayer{
+            text-align: center;
+            color: black;
+            height: 20%;
+            width: 100%;
+            font-size: 160%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            div{
+              height: 100%;
+              width: 100%;
+            }
+            .Blue{
+              background-color: blue;
+            }
+            .Red{
+              background-color: red;
+            }
+          }
+          .SelectedPawn{
+            text-align: center;
+            color: black;
+            font-size: 95%;
+            padding-top: 30%;
+            height: 20%;
+          }
+        }
+        .CheckersGrid {
+          background-color: #75716d;
+          border: 3px solid #000;
+          .CheckersRow {
+            display: flex;
+            .CheckersCellBlack,
+            .CheckersCellWhite {
+              text-align: center;
+              line-height: $cell-size;
+              justify-content: center;
+              align-items: center;
+              vertical-align: middle;
+              height: $cell-size;
+              width: $cell-size;
+            }
+            .CheckersCellBlack {
+              background-color: black;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              .CheckersPawn{
+                height: $cell-size - 2vh;
+                width: $cell-size - 2vh;
+                border-radius: 50%;
+              }
+              .CheckersPawn-1 {
+                background-color: red;
+                border: none;
+              }
+              .CheckersPawn-2 {
+                background-color: blue;
+                border: none;
+              }
+              .CheckersPawn-3 {
+                background-color: red;
+                border: 5px solid gold;
+              }
+              .CheckersPawn-4 {
+                background-color: blue;
+                border: 5px solid gold;
+              }
+            }
+            .CheckersCellWhite{
+              background-color: white;
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
